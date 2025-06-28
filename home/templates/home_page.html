@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="GrapesJS Studio">
+    <link rel="stylesheet" href="{% static 'home_style.css' %}?v={{ timestamp }}">
+    <style>
+      body {
+        background-image: url("{% static 'background.jpg' %}");
+      }
+    </style>
+  </head>
+  <body id="inw5fx" >
+    <h1 id="ihv0a2">Ai Code Explainer</h1>
+    <div id="i3no0u">Struggling to understand complex code? Our AI-powered code explainer breaks it down into simple, human-readable insights—instantly. Whether you're a beginner learning the ropes or a pro looking to speed up debugging, our AI deciphers even the trickiest code, providing clear explanations, best practices, and optimization tips. No more guesswork—just effortless understanding at your fingertips!</div>
+    <button type="button" id="imirn" onclick="window.location.href='/chat/'">Try Chatbot</button>
+  </body>
+</html>

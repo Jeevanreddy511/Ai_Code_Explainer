@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <meta name="generator" content="GrapesJS Studio" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}?v={{timestamp}}">
+</head>
+
+<body id="ibof17">
+    <!-- Side Bar Button-->
+    <span class="openbtn" onclick="w3_open()">&#9776;</span>
+
+    <!-- Side Bar Popup-->
+    <div class="sidebar" id="mySidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="w3_close()">&times;</a>
+        <div class="side_panel" id="side_panel">
+            <!-- <button class="sidebar_button" onclick="change_chat('')">Create New Chat</button>
+            {% for name in chats %}
+            <button class="sidebar_button" onclick="change_chat('{{name}}')">{{ name }}</button>
+            {% endfor %} -->
+            <script>  
+                var chats = JSON.parse('{{ chats|safe }}'); 
+                // console.log("Hello" + chats);
+            </script>
+        </div>
+    </div>
+
+    <h1 id="i0giw7">AI Code Explainer</h1>
+    <div id="il02ah" class="gjs-grid-row">
+        <div id="iy7u9i" class="gjs-grid-column">
+            <h1 id="imjapc"><span id="igfeqa"><i>Coding Section</i></span></h1>
+        </div>
+        <div id="ia1uid" class="gjs-grid-column">
+            <h1 id="ir38of"><span id="i7pcyy"><i>Ask Your Doubts</i></span></h1>
+        </div>
+    </div>
+    <div id="i4qhxb" class="gjs-grid-row">
+        <div id="im62rf" class="gjs-grid-column">
+            <!-- Here is the code for coding section-->
+            <!-- <textarea id="code-input" placeholder="Insert Your Code here"></textarea> -->
+            <div class="tab" id="i59gf" style="border-radius: 10px;">
+                <button type="button" id="defaultTab" class="tablinks" onclick="openTab(event, 'CodeTab')">Code Editor</button>
+                <button type="button" class="tablinks" id="i19wq" onclick="openTab(event, 'PreviewTab')">Preview</button>
+            </div>
+            <!-- Code Editor Section -->
+            <div id="CodeTab" class="tabcontent">
+                <textarea id="code-input" spellcheck="false" placeholder="Insert Your Code here"></textarea>
+            </div>
+            <!-- Preview Section -->
+            <div id="PreviewTab" class="tabcontent" style="overflow-y: auto;">
+                <div style="padding: 10px;border-radius: 10px;">
+                    <p id="preview">This section displays the tree Structure of the Code.</p>
+                </div>
+                <!-- <button id="get-preview" onclick="get_preview()">Get Preview</button> -->
+            </div>
+            <button id="get-preview">Get Preview</button>
+        </div>
+        <div id="iupicr" class="gjs-grid-column">
+            <!-- Here is the code for convo section-->
+            <div id="convo-container">
+
+            </div>
+            <div id="message-box">
+                <textarea id="message-input" rows="1" placeholder="Ask Anything..."></textarea>
+                <!-- <button type="button" id="ibbuu" onclick="sendMessage()">Send<br/></button> -->
+                <button type="button" id="ibbuu">Send<br/></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script id="my_script" src="{% static 'script.js' %}?v={{timestamp}}"></script>
+
+</html>
